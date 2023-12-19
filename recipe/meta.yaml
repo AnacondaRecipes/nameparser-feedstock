@@ -24,10 +24,13 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests.py
   imports:
     - nameparser
   commands:
     - pip check
+    - python tests.py
   requires:
     - pip
 
