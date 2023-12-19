@@ -19,15 +19,20 @@ requirements:
     - python
     - pip
     - setuptools
+    - wheel
   run:
     - python
 
 test:
   imports:
     - nameparser
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: http://github.com/derek73/python-nameparser
+  home: https://github.com/derek73/python-nameparser
   license: LGPL-2.1+
   license_family: LGPL
   license_file: LICENSE
@@ -43,7 +48,7 @@ about:
       hn.surnames (middle + last)
       hn.initials (first initial of each name part)
   doc_url: https://nameparser.readthedocs.io
-  dev_url: http://github.com/derek73/python-nameparser
+  dev_url: https://github.com/derek73/python-nameparser
 
 extra:
   recipe-maintainers:
