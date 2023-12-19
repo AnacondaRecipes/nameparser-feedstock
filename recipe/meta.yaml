@@ -1,5 +1,5 @@
 {% set name = "nameparser" %}
-{% set version = "1.0.5" %}
+{% set version = "1.1.3" %}
 {% set sha256 = "34a43750188be4e92943d7ebee5f72506efe7e12076b3463ca9dfc68a9a3e36f" %}
 
 package:
@@ -11,14 +11,14 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
 
@@ -31,7 +31,19 @@ about:
   license: LGPL-2.1+
   license_family: LGPL
   license_file: LICENSE
-  summary: 'A simple Python (3.2+ & 2.6+) module for parsing human names into their individual components.'
+  summary: A simple Python (3.2+ & 2.6+) module for parsing human names into their individual components.
+  description: |
+    A simple Python (3.2+ & 2.6+) module for parsing human names into their individual components.
+      hn.title
+      hn.first
+      hn.middle
+      hn.last
+      hn.suffix
+      hn.nickname
+      hn.surnames (middle + last)
+      hn.initials (first initial of each name part)
+  doc_url: https://nameparser.readthedocs.io
+  dev_url: http://github.com/derek73/python-nameparser
 
 extra:
   recipe-maintainers:
